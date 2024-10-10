@@ -4,35 +4,39 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2em;
-    font-family: "Poppins";
+    margin-top: 1em;
+    font-family: "Poppins" !important;
 }
 
-.titulo{
+.titulo {
     justify-content: center;
     text-align: center;
     font-weight: 500;
+    margin-bottom: 1em;
 }
 
-.container{
+.container1 {
     text-align: center;
-}
-
-.tabuleiro{
     align-items: center;
-    border: 1px solid black;
-    text-align: center;
-    padding: 1em;
+    justify-content: center;
+}
+
+.tabuleiro {
+    align-items: center !important;
+    border: 1px solid black !important;
+    text-align: center !important;
+    padding: 1em !important;
     background-color: #52b2b2;
+    border-collapse: separate
 }
 
-.linha{
+.linha {
     border: 1px solid black;
     text-align: center;
 }
 
 
-.botaoCelula{
+.botaoCelula {
     width: 100px;
     height: 100px;
     gap: 1em;
@@ -40,16 +44,46 @@ body {
     border-radius: 15px;
 }
 
-.simbolo{
+.simbolo {
     font-size: 50px;
 }
 
-.btnInicio{
-    margin-top: 2em;
+.btnInicio {
+    margin-top: 1.7em;
     padding: 0.7em 3em;
     background-color: #52b2b2;
     border: 0;
     font-size: 15px;
     color: azure;
     font-weight: 700;
+}
+
+.btnInicio:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modalDialog{
+    border: 0;
+    /* padding: 1.5em 3em; */
+    width: 30vw;
+    padding-top: 2em;
+}
+
+.campoNome{
+    border-radius: 5px;
+}
+
+.mostrar{
+    display: block;
+    color: red;
+}
+
+.esconder{
+    display: none;
+}
+
+.botaoSalvar{
+    border-radius: 1px;
+    font-weight: 500;
+    background-color: #004aad;
 }

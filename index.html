@@ -76,21 +76,20 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Informe seu nome:</label>
                 <input type="text" class="form-control campoNome" id="nome2" aria-describedby="emailHelp" required>
-                <div id="mensagemCaracter" class="form-text" style="display: block; color: red;">O nome do jogador não
-                    pode
-                    passar de 20 caracteres</div>
+                <div id="mensagemCaracter" class="form-text mostrar"></div>
             </div>
 
-            <label for="inputSimbolo" class="form-label">Seu símbolo é: <span></span></label>
+            <label for="inputSimbolo" class="form-label">Seu símbolo é: <span id="spanSimbolo2"></span></label>
 
             <div class="mt-auto text-end">
-                <button type="submit" class="btn btn-primary  botaoSalvar" id="btnSalvar">Jogar</button>
+                <button type="submit" class="btn btn-primary  botaoSalvar" id="btnJogar">Jogar</button>
             </div>
         </form>
     </dialog>
 
 
-    <script src="index.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="js/jogar.js"></script>
 </body>
 
 </html>

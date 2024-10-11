@@ -57,3 +57,31 @@ body {
     color: azure;
     font-weight: 700;
 }
+
+.btnInicio:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modalDialog{
+    border: 0;
+    /* padding: 1.5em 3em; */
+    width: 30vw;
+    padding-top: 2em;
+}
+
+.campoNome{
+    border-radius: 5px;
+}
+
+.mostrar{
+    display: block;
+    color: red;
+    margin-bottom: 5px;
+}
+
+
+.botaoSalvar{
+    border-radius: 1px;
+    font-weight: 500;
+    background-color: #004aad;
+}

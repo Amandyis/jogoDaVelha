@@ -33,7 +33,6 @@ dadosJogador1.addEventListener("submit", function (event) {
     const check = Array.from(checkBoxs).some(checkbox => checkbox.checked);
 
     const testeDeCheck = Array.from(checkBoxs)
-    console.log(testeDeCheck)
 
     const checkX = document.getElementById('X');
     const checkO = document.getElementById('O');

@@ -3,17 +3,14 @@ let ganhou = false
 let empatou = false
 
 const jogador1 = sessionStorage.getItem('jogadores')
-console.log(jogador1)
 
 function jogar() {
 
-    console.log(escolhAleatoria())
 
     campo.forEach(function (elemento) {
         elemento.addEventListener('click', function (event) {
             event.preventDefault();
             let dados = sessionStorage.getItem("jogadores")
-            console.log(dados)
 
         });
     });

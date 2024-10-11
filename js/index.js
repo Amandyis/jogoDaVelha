@@ -1,10 +1,14 @@
+import { jogar } from './jogar.js';
+
 const modal = document.getElementById("modal");
 
 function abrirModal() {
-    modal.showModal();
+    return modal.showModal();
 }
 
-const botaoSalvar = document.getElementById('btnSalvar');
+const btnIniciar = document.getElementById('botaoIniciar');
+btnIniciar.addEventListener('click', abrirModal)
+
 
 let mensagemCaracter = document.getElementById("mensagemCaracter");
 let mensagemCheck = document.getElementById('mensagemCheck');
@@ -98,4 +102,5 @@ dadosJogador2.addEventListener('click', function (event) {
     event.preventDefault();
     armazenaJogador(nome2, simboloJogador2, 2);
     modal2.close()
+    jogar()
 });

@@ -62,9 +62,13 @@ body {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+.frase{
+    padding-top: 1em;
+    font-weight: 500;
+}
+
 .modalDialog{
     border: 0;
-    /* padding: 1.5em 3em; */
     width: 30vw;
     padding-top: 2em;
 }

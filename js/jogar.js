@@ -10,9 +10,11 @@ let jogadores = JSON.parse(dados);
 
 export function jogar() {
 
+    let dados = sessionStorage.getItem("jogadores");
+    let jogadores = JSON.parse(dados);
+
     const jogador1 = jogadores.jogador1;
     const jogador2 = jogadores.jogador2;
-    console.log(jogador1.nome)
 
     let jogadorInicial = '';
 
@@ -28,7 +30,7 @@ export function jogar() {
         elemento.addEventListener('click', function (event) {
             event.preventDefault();
 
-            console.log(jogador1, jogador2)
+            console.log('oi')
 
         });
     });

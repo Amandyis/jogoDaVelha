@@ -5,72 +5,97 @@ function abrirModal() {
 }
 
 const botaoSalvar = document.getElementById('btnSalvar');
+
 let mensagemCaracter = document.getElementById("mensagemCaracter");
+let mensagemCheck = document.getElementById('mensagemCheck');
 
-const dadosJogador1 = document.getElementById("formJogador1")
+const dadosJogador1 = document.getElementById("formJogador1");
+
 dadosJogador1.addEventListener("submit", function (event) {
-
-
-    const nome1 = document.getElementById('nome1').value
-    mensagemCaracter.className = "esconder";
+    const nome1 = document.getElementById('nome1').value;
+    
     if (nome1.length > 20) {
         event.preventDefault();
         mensagemCaracter.innerHTML = "O nome do jogador não pode passar de 20 caracteres";
+        return;
+    }
+    else if(nome1.length === 0){
+        event.preventDefault();
+        mensagemCaracter.innerHTML = 'Esse campo é obrigatório'
         return
+    }
+    else{
+        mensagemCaracter.innerHTML = ''
     }
 
     let simboloJogador1;
     const checkBoxs = document.querySelectorAll('input[type="checkbox"]');
     const check = Array.from(checkBoxs).some(checkbox => checkbox.checked);
+
+    const testeDeCheck = Array.from(checkBoxs)
+    console.log(testeDeCheck)
+
+    const checkX = document.getElementById('X');
+    const checkO = document.getElementById('O');
+
+
     if (!check) {
-        event.preventDefault()
-        alert('O campo se símbolo não foi preenchido!')
-        return
-    } else {
-        simboloJogador1 = Array.from(checkBoxs).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id).join(', ')
-
+        event.preventDefault();
+        mensagemCheck.innerHTML = 'Esse campo é obrigatório'
+        return;
+    } 
+    else if(checkX.checked && checkO.checked){
+        event.preventDefault();
+        mensagemCheck.innerHTML = 'É permitido a escolha de apenas um símbolo'
+        return;
     }
-    armazenaJogador(nome1, simboloJogador1)
-    event.preventDefault()
-    pegaSimbolo1(simboloJogador1)
+    else {
+        simboloJogador1 = Array.from(checkBoxs).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id).join(', ');
+    }
+
+    armazenaJogador(nome1, simboloJogador1, 1);
+    event.preventDefault();
+    pegaSimbolo1(simboloJogador1);
     modal.close();
-    modal2.showModal()
-    pegaDados2(simboloJogador1);
-})
+    modal2.showModal();
+});
 
-
-function armazenaJogador(nome, simbolo) {
-    jogador = { nome: nome, simbolo: simbolo }
-    jogador_json = JSON.stringify(jogador);
-    sessionStorage.setItem('jogadores', jogador_json)
+function armazenaJogador(nome, simbolo, jogadorNumero) {
+    let jogadores = JSON.parse(sessionStorage.getItem('jogadores')) || {};
+    jogadores[`jogador${jogadorNumero}`] = { nome: nome, simbolo: simbolo };
+    sessionStorage.setItem('jogadores', JSON.stringify(jogadores));
 }
-
 
 let simbolo2 = document.getElementById('spanSimbolo2');
-
-
 const modal2 = document.getElementById("modal2");
+
 function pegaSimbolo1(simbolo1) {
-
-
-    let simboloJogador2;
-    if (simbolo1 === "X") {
-        simboloJogador2 = 'O'
-    } else {
-        simboloJogador2 = 'X'
-    }
-
-    return simbolo2.innerHTML = simboloJogador2
-
+    let simboloJogador2 = (simbolo1 === "X") ? 'O' : 'X';
+    simbolo2.innerHTML = simboloJogador2;
 }
 
-function pegaDados2(simbolo){
-    const dadosJogador2 = document.getElementById('btnJogar');
-    dadosJogador2.addEventListener('submit', function (event) {
-    event.preventDefault()
+const dadosJogador2 = document.getElementById('btnJogar');
+dadosJogador2.addEventListener('click', function (event) {
+    event.preventDefault();
     const nome2 = document.getElementById('nome2').value;
-    
-    armazenaJogador(nome2, simboloJogador2);
-})
-}
+    let mensagemCaracter = document.getElementById("mensagemCaracter2");
+    let simboloJogador2 = (simbolo2.innerHTML === "X") ? 'X' : 'O';
 
+    if (nome2.length > 20) {
+        event.preventDefault();
+        mensagemCaracter.innerHTML = "O nome do jogador não pode passar de 20 caracteres";
+        return;
+    }
+    else if(nome2.length === 0){
+        event.preventDefault();
+        mensagemCaracter.innerHTML = 'Esse campo é obrigatório'
+        return
+    }
+    else{
+        mensagemCaracter.innerHTML = ''
+    }
+    
+    event.preventDefault();
+    armazenaJogador(nome2, simboloJogador2, 2);
+    modal2.close()
+});

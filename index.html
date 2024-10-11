@@ -16,17 +16,17 @@
     <div class="container1">
         <table class="tabuleiro">
             <th class="cabecalho">
-                <tr class="linha">
+                <tr class="linha1">
                     <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
                     <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
                     <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
                 </tr>
-                <tr class="linha">
+                <tr class="linha2">
                     <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
                     <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
                     <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
                 </tr>
-                <tr class="linha">
+                <tr class="linha3">
                     <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
                     <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
                     <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
@@ -46,9 +46,8 @@
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Informe seu nome:</label>
-                <input type="text" class="form-control campoNome" id="nome1" aria-describedby="emailHelp" required>
-                <div id="emailHelp" class="form-text esconder">O nome do jogador não pode
-                    passar de 20 caracteres</div>
+                <input type="text" class="form-control campoNome" id="nome1" aria-describedby="emailHelp">
+                <div id="mensagemCaracter" class="form-text mostrar"></div>
             </div>
 
             <label for="inputSimbolo" class="form-label">Escolha o seu símbolo:</label>
@@ -62,7 +61,9 @@
                     <input type="checkbox" class="form-check-input" id="O">
                     <label class="form-check-label" for="exampleCheck1">O</label>
                 </div>
+                
             </div>
+            <div id="mensagemCheck" class="form-text mostrar"></div>
             <div class="mt-auto text-end">
                 <button type="submit" class="btn btn-primary  botaoSalvar" id="btnSalvar">Salvar</button>
             </div>
@@ -76,7 +77,7 @@
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Informe seu nome:</label>
                 <input type="text" class="form-control campoNome" id="nome2" aria-describedby="emailHelp" required>
-                <div id="mensagemCaracter" class="form-text mostrar"></div>
+                <div id="mensagemCaracter2" class="form-text mostrar"></div>
             </div>
 
             <label for="inputSimbolo" class="form-label">Seu símbolo é: <span id="spanSimbolo2"></span></label>

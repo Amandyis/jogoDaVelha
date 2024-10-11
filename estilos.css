@@ -76,11 +76,9 @@ body {
 .mostrar{
     display: block;
     color: red;
+    margin-bottom: 5px;
 }
 
-.esconder{
-    display: none;
-}
 
 .botaoSalvar{
     border-radius: 1px;

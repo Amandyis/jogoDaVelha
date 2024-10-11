@@ -2,6 +2,9 @@ const campo = document.querySelectorAll(".botaoCelula")
 let ganhou = false
 let empatou = false
 
+const jogador1 = sessionStorage.getItem('jogadores')
+console.log(jogador1)
+
 function jogar() {
 
     console.log(escolhAleatoria())
@@ -23,6 +26,10 @@ function escolhAleatoria() {
     const tamanho = opcoes.length
     return opcoes.charAt(Math.floor(Math.random() * tamanho));
 }
+
+
+
+
 
 // while (ganhou !== true || empatou !== true) {
 

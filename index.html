@@ -11,26 +11,12 @@
     <title>Jogo da Velha</title>
 </head>
 
-<body>
+<body onload="constroiTabela()">
     <h1 class="titulo">Jogo da Velha</h1>
     <div class="container1">
         <table class="tabuleiro">
             <th class="cabecalho">
-                <tr class="linha1">
-                    <td class="celula"><button class="botaoCelula" data-i="1"></button></td>
-                    <td class="celula"><button class="botaoCelula" data-i="2"></button></td>
-                    <td class="celula"><button class="botaoCelula" data-i="3"></button></td>
-                </tr>
-                <tr class="linha2">
-                    <td class="celula"><button class="botaoCelula" data-i="4"></button></td>
-                    <td class="celula"><button class="botaoCelula" data-i="5"></button></td>
-                    <td class="celula"><button class="botaoCelula" data-i="6"></button></td>
-                </tr>
-                <tr class="linha3">
-                    <td class="celula"><button class="botaoCelula" data-i="7"></button></td>
-                    <td class="celula"><button class="botaoCelula" data-i="8"></button></td>
-                    <td class="celula"><button class="botaoCelula" data-i="9"></button></td>
-                </tr>
+
             </th>
         </table>
     </div>
@@ -53,15 +39,19 @@
             <label for="inputSimbolo" class="form-label">Escolha o seu símbolo:</label>
 
             <div class="d-flex">
-                <div class="mb-3 form-check me-3">
-                    <input type="checkbox" class="form-check-input" id="X">
-                    <label class="form-check-label" for="exampleCheck1">X</label>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="O">
-                    <label class="form-check-label" for="exampleCheck1">O</label>
-                </div>
-                
+
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="X">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      X
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="O">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      O
+                    </label>
+                  </div>
             </div>
             <div id="mensagemCheck" class="form-text mostrar"></div>
             <div class="mt-auto text-end">
@@ -91,6 +81,7 @@
 
     <script src="/js/index.js" type="module"></script>
     <script src="js/jogar.js" type="module"></script>
+    <script src="/js/tabela/criaTabela.js"></script>
 </body>
 
 </html>

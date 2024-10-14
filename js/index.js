@@ -33,24 +33,14 @@ dadosJogador1.addEventListener("submit", function (event) {
     }
 
     let simboloJogador1;
-    const checkBoxs = document.querySelectorAll('input[type="checkbox"]');
+    const checkBoxs = document.querySelectorAll('input[type="radio"]');
     const check = Array.from(checkBoxs).some(checkbox => checkbox.checked);
-
-
-    const checkX = document.getElementById('X');
-    const checkO = document.getElementById('O');
-
 
     if (!check) {
         event.preventDefault();
         mensagemCheck.innerHTML = 'Esse campo é obrigatório'
         return;
     } 
-    else if(checkX.checked && checkO.checked){
-        event.preventDefault();
-        mensagemCheck.innerHTML = 'É permitido a escolha de apenas um símbolo'
-        return;
-    }
     else {
         simboloJogador1 = Array.from(checkBoxs).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id).join(', ');
     }

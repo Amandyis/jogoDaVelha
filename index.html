@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
     <title>Jogo da Velha</title>
 </head>
 
@@ -16,27 +17,13 @@
     <div class="container1">
         <table class="tabuleiro">
             <th class="cabecalho">
-                <tr class="linha1">
-                    <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
-                    <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
-                    <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
-                </tr>
-                <tr class="linha2">
-                    <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
-                    <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
-                    <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
-                </tr>
-                <tr class="linha3">
-                    <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
-                    <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
-                    <td class="celula"><button class="botaoCelula"><span class="simbolo"></span></button></td>
-                </tr>
+
             </th>
         </table>
     </div>
 
-    <div>
-        <button type="button" class="btnInicio" id="botaoIniciar" onclick="abrirModal()">Iniciar</button>
+    <div id="botaoEFrase">
+        <button type="button" class="btnInicio" id="botaoIniciar">Iniciar</button>
     </div>
 
 
@@ -53,15 +40,19 @@
             <label for="inputSimbolo" class="form-label">Escolha o seu símbolo:</label>
 
             <div class="d-flex">
-                <div class="mb-3 form-check me-3">
-                    <input type="checkbox" class="form-check-input" id="X">
-                    <label class="form-check-label" for="exampleCheck1">X</label>
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="O">
-                    <label class="form-check-label" for="exampleCheck1">O</label>
-                </div>
-                
+
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="X">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      X
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="O">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      O
+                    </label>
+                  </div>
             </div>
             <div id="mensagemCheck" class="form-text mostrar"></div>
             <div class="mt-auto text-end">
@@ -88,9 +79,14 @@
         </form>
     </dialog>
 
+    <dialog class="modalDialog2" id="modal3"></dialog>
+    <dialog class="modalDialog2" id="modal4"></dialog>
 
-    <script src="/js/index.js"></script>
-    <script src="js/jogar.js"></script>
+    <script src="/js/tabela/criaTabela.js"></script>
+    <script src="/js/index.js" type="module"></script>
+    <script src="js/validacoes/validacaoJogador1.js" type="module"></script>
+    <script src="js/jogar.js" type="module"></script>
+    
 </body>
 
 </html>

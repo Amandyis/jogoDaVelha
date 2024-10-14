@@ -1,9 +1,8 @@
-let qtdLinhas = 0;
-let qtdColunas = 0;
 
 function constroiTabela() {
     const cabecalhoTabela = document.querySelector(".cabecalho");
-
+    let qtdLinhas = 0;
+    let qtdColunas = 0;
     while (qtdLinhas !== 3) {
         let linha = document.createElement('tr');
         while (qtdColunas !== 3) {
@@ -18,6 +17,8 @@ function constroiTabela() {
             qtdColunas += 1;
         }
         qtdColunas = 0
-        qtdLinhas +=1
+        qtdLinhas += 1
     }
+    
 }
+window.onload = constroiTabela();

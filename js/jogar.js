@@ -1,4 +1,4 @@
-const campo = document.querySelectorAll(".botaoCelula");
+const campo = document.querySelectorAll('.botaoCelula');
 const indicaNome = document.getElementById('botaoEFrase');
 let ganhou = false;
 let empatou = false;
@@ -14,6 +14,7 @@ function escolhAleatoria() {
 }
 
 export function jogar() {
+
 
     let dados = sessionStorage.getItem("jogadores");
     let jogadores = JSON.parse(dados);
@@ -31,14 +32,17 @@ export function jogar() {
 
     indicaNome.innerHTML = `<p class="frase">Vez do jogador: ${jogadorAtual.nome}</p>`
 
-    
-
-
     campo.forEach((item) => {
         item.innerHTML = "";
         item.addEventListener("click", function () {
             if (!ganhou && !empatou) {
-                item.innerHTML = jogadorAtual.simbolo;
+                if(item.innerHTML.length === 0){
+                    item.innerHTML = jogadorAtual.simbolo;
+                }else{
+                    alert('Não é possivel')
+                    return
+                }
+                
                 console.log(campo[2])
                 jogadorAtual = (jogadorAtual.simbolo === jogador1.simbolo) ? jogador2 : jogador1;
                 indicaNome.innerHTML = `<p class="frase">Vez do jogador: ${jogadorAtual.nome}</p>`;

@@ -1,7 +1,6 @@
 import { jogar } from './jogar.js';
-import {validaNome} from './validacoes/validacaoJogador1.js';
-import {validaNome2} from './validacoes/validacaoJogador1.js';
-import {validaCheck} from './validacoes/validacaoJogador1.js'
+import {validaNome} from './validacoes/validaNome.js';
+import {validaCheck} from './validacoes/validaCheck.js'
 
 const modal = document.getElementById("modal");
 
@@ -24,7 +23,7 @@ dadosJogador1.addEventListener("submit", function (event) {
     validaNome(nome1, event)
 
     const simboloJogador1 = validaCheck(event);
-    if (simboloJogador1 !== null) { 
+    if (simboloJogador1 !== null && nome1.length !== 0) { 
         armazenaJogador(nome1, simboloJogador1, 1);
         event.preventDefault();
         pegaSimbolo1(simboloJogador1);
@@ -68,7 +67,7 @@ dadosJogador2.addEventListener('click', function (event) {
         mensagemCaracter.innerHTML = ''
     }
     
-    // validaNome2(nome2, event)
+    // validaNome(nome2, event)
 
     event.preventDefault();
     armazenaJogador(nome2, simboloJogador2, 2);

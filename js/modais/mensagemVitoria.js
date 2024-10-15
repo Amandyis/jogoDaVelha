@@ -1,9 +1,10 @@
-const modal4 = document.getElementById('modal4')
+const modal5 = document.getElementById('modal5');
 
-modal4.innerHTML = `
+modal5.innerHTML = `
     
         <div>
-            <p>Deu empate.<br>
+            <p>Vitória do jogador:<br>
+                <span id="ganhador"></span><br>
                 Deseja reniciar e jogar<br>novamente?</p>
         </div>
         <div class="mt-auto text-end ">
@@ -12,14 +13,13 @@ modal4.innerHTML = `
         </div>
     `
 
+export function abrirMensagemVitoria(nomeGanhador) {
 
-
-export function abrirMensagemEmpate(){
-
-    modal4.showModal()
-    
-    document.getElementById('btnSair').addEventListener("click", function(){
-        modal4.close();
+    modal5.showModal()
+    let ganhador = document.getElementById('ganhador');
+    ganhador.innerHTML = nomeGanhador
+    document.getElementById('btnSair').addEventListener("click", function () {
+        modal5.close();
         location.reload();
     })
     document.getElementById('btnJogar')

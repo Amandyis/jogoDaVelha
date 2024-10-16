@@ -4,7 +4,7 @@ modal4.innerHTML = `
     
         <div>
             <p>Deu empate.<br>
-                Deseja reniciar e jogar<br>novamente?</p>
+                Deseja reiniciar e jogar<br>novamente?</p>
         </div>
         <div class="mt-auto text-end ">
             <button type="submit" class="btn btn-primary  botaoSalvar m-3" id="btnJogar">Jogar</button>

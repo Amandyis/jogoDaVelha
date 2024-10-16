@@ -48,13 +48,12 @@ export function jogar(n) {
     indicaNome.innerHTML = `<p class="frase">Vez do jogador: ${jogadorAtual.nome}</p>`
 
     campo.forEach((item) => {
-        item.innerHTML = ""
         item.addEventListener("click", function (event) {
-            item.innerHTML = ""
             if (!ganhou && !empatou) {
-                console.log(item.innerHTML.length)
+                // console.log(item.innerHTML.length)
                 if (item.innerHTML.length == 0) {
                     item.innerHTML = jogadorAtual.simbolo;
+                    console.log(item.innerHTML.length)
                     empatou = verificarEmpate(item, event)
                     if (empatou) {
                         indicaNome.innerHTML = `<p class="frase">Fim de jogo!</p>`

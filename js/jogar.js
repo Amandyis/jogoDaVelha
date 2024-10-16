@@ -34,9 +34,9 @@ export function jogar(n) {
     let dados = sessionStorage.getItem("jogadores");
     let jogadores = JSON.parse(dados);
 
-    const jogador1 = jogadores.jogador1;
-    const jogador2 = jogadores.jogador2;
-    console.log(jogador1, jogador2)
+    let jogador1 = jogadores.jogador1;
+    let jogador2 = jogadores.jogador2;
+
     let jogadorAtual = '';
 
     if (escolhAleatoria() == 1) {
@@ -50,7 +50,6 @@ export function jogar(n) {
     campo.forEach((item) => {
         item.addEventListener("click", function (event) {
             if (!ganhou && !empatou) {
-                // console.log(item.innerHTML.length)
                 if (item.innerHTML.length == 0) {
                     item.innerHTML = jogadorAtual.simbolo;
                     console.log(item.innerHTML.length)

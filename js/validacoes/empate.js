@@ -18,3 +18,7 @@ export function verificarEmpate(elemento, event) {
 export function reiniciarEmpate() {
     jaFoi = [];
 }
+
+// function testeDeEmpate(){
+//     let campos =
+// }

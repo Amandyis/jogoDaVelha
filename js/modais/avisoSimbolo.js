@@ -1,3 +1,4 @@
+import { jogar } from '/js/jogar.js';
 const modal6 = document.getElementById('modal6')
 
 modal6.innerHTML = `
@@ -11,12 +12,25 @@ modal6.innerHTML = `
         </div>
     `
 
+function trocarSimbolos() {
+    let dados = sessionStorage.getItem("jogadores");
+    let jogadores = JSON.parse(dados);
+
+    let troca = jogadores.jogador1.simbolo;
+    jogadores.jogador1.simbolo = jogadores.jogador2.simbolo;
+    jogadores.jogador2.simbolo = troca;
+
+    sessionStorage.setItem("jogadores", JSON.stringify(jogadores));
+}
 
 
-export function abrirModalSimbolo(){
+
+export function abrirModalSimbolo() {
 
     modal6.showModal()
-    document.getElementById('btnOK2').addEventListener("click", function(){
+    document.getElementById('btnOK2').addEventListener("click", function () {
         modal6.close();
+        trocarSimbolos();
+        jogar(2);
     })
 }

@@ -8,6 +8,13 @@ export function verificarEmpate(elemento, event) {
     if (jaFoi.length === 9) {
         event.preventDefault()
         abrirMensagemEmpate()
+        console.log(jaFoi)
         return true
     }
+    console.log(jaFoi)
+
+}
+
+export function reiniciarEmpate() {
+    jaFoi = [];
 }

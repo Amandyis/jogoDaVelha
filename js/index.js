@@ -67,10 +67,8 @@ dadosJogador2.addEventListener('click', function (event) {
         mensagemCaracter.innerHTML = ''
     }
     
-    // validaNome(nome2, event)
-
     event.preventDefault();
     armazenaJogador(nome2, simboloJogador2, 2);
     modal2.close()
-    jogar()
+    jogar(1)
 });

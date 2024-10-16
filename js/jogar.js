@@ -1,7 +1,8 @@
-import {abrirModalCelulaOcupada} from "./modais/mensagemDeCelulaOcupada.js"
-import {verificarVitoria} from "./validacoes/vitoria.js"
-import {verificarEmpate} from "./validacoes/empate.js"
-import {abrirMensagemVitoria} from "./modais/mensagemVitoria.js"
+import { abrirModalCelulaOcupada } from "./modais/mensagemDeCelulaOcupada.js"
+import { verificarVitoria } from "./validacoes/vitoria.js"
+import { verificarEmpate } from "./validacoes/empate.js"
+import { reiniciarEmpate } from "./validacoes/empate.js"
+import { abrirMensagemVitoria } from "./modais/mensagemVitoria.js"
 
 const campo = document.querySelectorAll('.botaoCelula');
 const indicaNome = document.getElementById('botaoEFrase');
@@ -14,17 +15,28 @@ function escolhAleatoria() {
     return opcoes.charAt(Math.floor(Math.random() * tamanho));
 }
 
+let vez;
 
+export function jogar(n) {
 
-export function jogar() {
-
+    ganhou = false;
+    empatou = false;
+    vez = n
+    reiniciarEmpate();
+    if(vez == 2){
+        campo.forEach((botao) => {
+            botao.innerHTML = "";
+            botao.onclick = null;
+        })
+    }
+    
 
     let dados = sessionStorage.getItem("jogadores");
     let jogadores = JSON.parse(dados);
 
     const jogador1 = jogadores.jogador1;
     const jogador2 = jogadores.jogador2;
-
+    console.log(jogador1, jogador2)
     let jogadorAtual = '';
 
     if (escolhAleatoria() == 1) {
@@ -36,13 +48,15 @@ export function jogar() {
     indicaNome.innerHTML = `<p class="frase">Vez do jogador: ${jogadorAtual.nome}</p>`
 
     campo.forEach((item) => {
-        item.innerHTML = "";
+        item.innerHTML = ""
         item.addEventListener("click", function (event) {
+            item.innerHTML = ""
             if (!ganhou && !empatou) {
-                if(item.innerHTML.length === 0){
+                console.log(item.innerHTML.length)
+                if (item.innerHTML.length == 0) {
                     item.innerHTML = jogadorAtual.simbolo;
                     empatou = verificarEmpate(item, event)
-                    if(empatou){
+                    if (empatou) {
                         indicaNome.innerHTML = `<p class="frase">Fim de jogo!</p>`
                         return
                     }
@@ -50,17 +64,22 @@ export function jogar() {
                     if (vencedor) {
                         ganhou = true;
                         indicaNome.innerHTML = `<p class="frase">Fim de jogo!</p>`
-                        abrirMensagemVitoria(jogadorAtual.nome)
+                        let nomeVencedor = (vencedor === jogador1.simbolo) ? jogador1.nome : jogador2.nome
+                        abrirMensagemVitoria(nomeVencedor)
                         return;
                     }
                 }
-                else{
+                else {
+                    console.log('Entrou no else')
                     abrirModalCelulaOcupada()
                     return
                 }
-                
+
                 jogadorAtual = (jogadorAtual.simbolo === jogador1.simbolo) ? jogador2 : jogador1;
                 indicaNome.innerHTML = `<p class="frase">Vez do jogador: ${jogadorAtual.nome}</p>`;
+            }
+            else {
+                console.log('Não está entrando no if da jogada')
             }
         });
     });

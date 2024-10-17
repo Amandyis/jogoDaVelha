@@ -33,7 +33,7 @@ export function abrirModalSimbolo() {
         modal6.close();
         trocarSimbolos();
         jogar(2);
-        // window.location.href = 'index2.html';
+        window.location.href = 'index2.html';
         // // window.onload = jogarNovamente()
     })
 }

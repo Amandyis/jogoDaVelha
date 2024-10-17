@@ -22,7 +22,7 @@ export function abrirMensagemVitoria(nomeGanhador) {
     ganhador.innerHTML = nomeGanhador
     document.getElementById('btnSair1').addEventListener("click", function () {
         modal5.close();
-        location.reload();
+        window.location.href = "index.html"
     })
     document.getElementById('btnJogar2').addEventListener("click", function(){
         modal5.close()

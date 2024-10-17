@@ -80,9 +80,9 @@ function jogarNovamente(n) {
                     abrirMensagemVitoria(nomeVencedor)
                     return;
                 }
-                if(vez == 2){
-                    item.removeEventListener("click", clicado);
-                }
+                // if(vez == 2){
+                //     item.removeEventListener("click", clicado);
+                // }
             }
             else {
                 console.log('Entrou no else')

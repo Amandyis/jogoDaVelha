@@ -12,6 +12,7 @@ export function verificarEmpate(elemento, event) {
         return true
     }
     console.log(jaFoi)
+    return
 
 }
 

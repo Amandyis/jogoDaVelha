@@ -3,6 +3,8 @@ import { verificarVitoria } from "./validacoes/vitoria.js"
 import { verificarEmpate } from "./validacoes/empate.js"
 import { reiniciarEmpate } from "./validacoes/empate.js"
 import { abrirMensagemVitoria } from "./modais/mensagemVitoria.js"
+import { validaJogada } from "./validacoes/celulaOcupada.js"
+
 
 const campo = document.querySelectorAll('.botaoCelula');
 const indicaNome = document.getElementById('botaoEFrase');
@@ -57,7 +59,7 @@ export function jogar(n) {
                 return
             }
 
-            if (item.innerHTML.length === 0) {
+            if (validaJogada(item)) {
                 item.innerHTML = jogadorAtual.simbolo;
                 console.log(`Preenchendo a célula com: ${jogadorAtual.simbolo}`);
 
@@ -80,7 +82,7 @@ export function jogar(n) {
             }
             else {
                 console.log('Entrou no else')
-                abrirModalCelulaOcupada()
+                // abrirModalCelulaOcupada()
                 return
             }
 
@@ -88,7 +90,7 @@ export function jogar(n) {
             jogadorAtual = (jogadorAtual.simbolo === jogador1.simbolo) ? jogador2 : jogador1;
             indicaNome.innerHTML = `<p class="frase">Vez do jogador: ${jogadorAtual.nome}</p>`;
         }
-        
+        item.removeEventListener("click", clicado);
         item.addEventListener("click", clicado);
         
     });

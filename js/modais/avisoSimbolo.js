@@ -1,4 +1,5 @@
 import { jogar } from '/js/jogar.js';
+import { jogarNovamente } from '/js/jogarNovamente.js';
 const modal6 = document.getElementById('modal6')
 
 modal6.innerHTML = `

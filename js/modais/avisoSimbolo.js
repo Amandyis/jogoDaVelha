@@ -32,7 +32,8 @@ export function abrirModalSimbolo() {
     document.getElementById('btnOK2').addEventListener("click", function () {
         modal6.close();
         trocarSimbolos();
-        window.location.href = 'index2.html';
-        // window.onload = jogarNovamente()
+        jogar(2);
+        // window.location.href = 'index2.html';
+        // // window.onload = jogarNovamente()
     })
 }

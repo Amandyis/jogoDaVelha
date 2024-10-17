@@ -19,6 +19,10 @@ function escolhAleatoria() {
 
 let vez;
 
+document.getElementById('botaoIniciar').addEventListener('click', function() {
+    jogar(2);
+});
+
 export function jogar(n) {
 
     ganhou = false;

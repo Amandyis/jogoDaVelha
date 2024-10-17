@@ -1,5 +1,5 @@
 import { jogar } from '/js/jogar.js';
-import { jogarNovamente } from '/js/jogarNovamente.js';
+// import { jogarNovamente } from '/js/jogarNovamente.js';
 const modal6 = document.getElementById('modal6')
 
 modal6.innerHTML = `
@@ -32,6 +32,7 @@ export function abrirModalSimbolo() {
     document.getElementById('btnOK2').addEventListener("click", function () {
         modal6.close();
         trocarSimbolos();
-        jogar(2);
+        window.location.href = 'index2.html';
+        // window.onload = jogarNovamente()
     })
 }

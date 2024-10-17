@@ -38,7 +38,7 @@ export function jogar() {
     campo.forEach((item) => {
         item.innerHTML = "";
         item.addEventListener("click", function (event) {
-            if (!ganhou && !empatou) {
+            if (!ganhou || !empatou) {
                 if(item.innerHTML.length === 0){
                     item.innerHTML = jogadorAtual.simbolo;
                     empatou = verificarEmpate(item, event)

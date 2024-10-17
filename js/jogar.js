@@ -78,7 +78,7 @@ export function jogar(n) {
                     item.removeEventListener("click", clicado);
                 }
             }
-            if(item.innerHTML > 0) {
+            else {
                 console.log('Entrou no else')
                 abrirModalCelulaOcupada()
                 return

@@ -17,33 +17,18 @@ function escolhAleatoria() {
     return opcoes.charAt(Math.floor(Math.random() * tamanho));
 }
 
-let vez;
 
-document.addEventListener('DOMContentLoaded', function() {
-    const botaoIniciar2 = document.getElementById('botaoIniciar2');
-    if (botaoIniciar2) {
-        botaoIniciar2.addEventListener('click', function() {
-            jogarNovamente(2);
-        });
-    } 
-    
-});
-
-
-export function jogarNovamente(n) {
+export function jogarNovamente() {
 
     ganhou = false;
     empatou = false;
-    vez = n
     reiniciarEmpate();
-    if (vez == 2) {
-        campo.forEach((botao) => {
-            botao.innerHTML = "";
-            botao.onclick = null;
-            // botao.removeEventListener("click")
-        })
-    }
 
+
+    campo.forEach((botao) => {
+        botao.innerHTML = "";
+        botao.onclick = null;
+    })
 
     let dados = sessionStorage.getItem("jogadores");
     let jogadores = JSON.parse(dados);
@@ -87,13 +72,9 @@ export function jogarNovamente(n) {
                     abrirMensagemVitoria(nomeVencedor)
                     return;
                 }
-                // if(vez == 2){
-                //     item.removeEventListener("click", clicado);
-                // }
             }
             else {
                 console.log('Entrou no else')
-                // abrirModalCelulaOcupada()
                 return
             }
 
@@ -109,4 +90,7 @@ export function jogarNovamente(n) {
 };
 
 
-// window.onload = jogarNovamente(2);
+const urlDaPagina = window.location.pathname;
+if(urlDaPagina.includes('index2.html')){
+    window.onload = jogarNovamente;
+}

@@ -15,7 +15,6 @@ export function verificarVitoria(campoSimbolo) {
 
     for (const combinação of combinações) {
         const [a, b, c] = combinação;
-        console.log(combinação)
         if (campoSimbolo[a].innerHTML && campoSimbolo[a].innerHTML === campoSimbolo[b].innerHTML && campoSimbolo[a].innerHTML === campoSimbolo[c].innerHTML) {
             return campoSimbolo[a].innerHTML;
         }

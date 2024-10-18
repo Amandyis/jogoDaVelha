@@ -70,5 +70,5 @@ dadosJogador2.addEventListener('click', function (event) {
     event.preventDefault();
     armazenaJogador(nome2, simboloJogador2, 2);
     modal2.close()
-    jogar(1)
+    jogar()
 });

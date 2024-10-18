@@ -17,21 +17,12 @@ function escolhAleatoria() {
     return opcoes.charAt(Math.floor(Math.random() * tamanho));
 }
 
-let vez;
 
-
-
-export function jogar(n) {
+export function jogar() {
 
     ganhou = false;
     empatou = false;
-    vez = n
     reiniciarEmpate();
-    // if (vez == 2) {
-        
-    //         // botao.removeEventListener("click")
-    //     })
-    // }
 
     campo.forEach((botao) => {
         botao.innerHTML = "";
@@ -54,7 +45,8 @@ export function jogar(n) {
     indicaNome.innerHTML = `<p class="frase">Vez do jogador: ${jogadorAtual.nome}</p>`
 
     campo.forEach((item) => {
-        
+        item.innerHTML = ""
+        console.log(campo)
         let clicado = function (event) {
             console.log(campo)
             console.log(item.innerHTML)
@@ -81,13 +73,11 @@ export function jogar(n) {
                     abrirMensagemVitoria(nomeVencedor)
                     return;
                 }
-                if(vez == 2){
-                    item.removeEventListener("click", clicado);
-                }
+                
             }
             else {
                 console.log('Entrou no else')
-                // abrirModalCelulaOcupada()
+                abrirModalCelulaOcupada()
                 return
             }
 

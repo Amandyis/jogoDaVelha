@@ -25,9 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         botaoIniciar2.addEventListener('click', function() {
             jogarNovamente(2);
         });
-    } else {
-        console.error('Botão Iniciar2 não encontrado.');
-    }
+    } 
+    
 });
 
 

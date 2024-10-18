@@ -1,4 +1,5 @@
-import { jogar } from '/js/jogar.js';
+import { jogarNovamente } from '/js/jogarNovamente.js';
+import {abrirModalSimbolo} from "/js/modais/avisoSimbolo.js"
 
 const modal4 = document.getElementById('modal4')
 
@@ -31,11 +32,11 @@ export function abrirMensagemEmpate(){
     
     document.getElementById('btnSair').addEventListener("click", function(){
         modal4.close();
-        location.reload();
+        window.location.href = "index.html"
     })
     document.getElementById('btnJogar3').addEventListener("click", function(){
         modal4.close();
         trocarSimbolos();
-        jogar(2);
+        abrirModalSimbolo();
     })
 }

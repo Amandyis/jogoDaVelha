@@ -1,6 +1,6 @@
 import {abrirMensagemEmpate} from "/js/modais/mensagemEmpate.js"
 
-let jaFoi = [];
+var jaFoi = [];
 
 export function verificarEmpate(elemento, event) {
     

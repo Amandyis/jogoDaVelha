@@ -27,14 +27,15 @@ export function jogar(n) {
     empatou = false;
     vez = n
     reiniciarEmpate();
-    if (vez == 2) {
-        campo.forEach((botao) => {
-            botao.innerHTML = "";
-            botao.onclick = null;
-            // botao.removeEventListener("click")
-        })
-    }
+    // if (vez == 2) {
+        
+    //         // botao.removeEventListener("click")
+    //     })
+    // }
 
+    campo.forEach((botao) => {
+        botao.innerHTML = "";
+        botao.onclick = null;})
 
     let dados = sessionStorage.getItem("jogadores");
     let jogadores = JSON.parse(dados);
@@ -53,7 +54,9 @@ export function jogar(n) {
     indicaNome.innerHTML = `<p class="frase">Vez do jogador: ${jogadorAtual.nome}</p>`
 
     campo.forEach((item) => {
+        
         let clicado = function (event) {
+            console.log(campo)
             console.log(item.innerHTML)
             console.log(item.innerHTML.length)
 

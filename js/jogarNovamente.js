@@ -19,11 +19,26 @@ function escolhAleatoria() {
 
 let vez;
 
-document.getElementById('botaoIniciar').addEventListener('click', function() {
-    jogarNovamente(2);
+document.addEventListener('DOMContentLoaded', function() {
+    const botaoIniciar2 = document.getElementById('botaoIniciar2');
+    if (botaoIniciar2) { // Verifique se o elemento foi encontrado
+        botaoIniciar2.addEventListener('click', function() {
+            jogarNovamente(2);
+        });
+    } else {
+        console.error('Botão Iniciar2 não encontrado.');
+    }
 });
 
-function jogarNovamente(n) {
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Chama a função jogarNovamente automaticamente
+//     jogarNovamente(2);
+// });
+
+
+
+export function jogarNovamente(n) {
 
     ganhou = false;
     empatou = false;
@@ -102,4 +117,4 @@ function jogarNovamente(n) {
 };
 
 
-
+// window.onload = jogarNovamente(2);

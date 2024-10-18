@@ -21,7 +21,7 @@ let vez;
 
 document.addEventListener('DOMContentLoaded', function() {
     const botaoIniciar2 = document.getElementById('botaoIniciar2');
-    if (botaoIniciar2) { // Verifique se o elemento foi encontrado
+    if (botaoIniciar2) {
         botaoIniciar2.addEventListener('click', function() {
             jogarNovamente(2);
         });
@@ -29,13 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Botão Iniciar2 não encontrado.');
     }
 });
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Chama a função jogarNovamente automaticamente
-//     jogarNovamente(2);
-// });
-
 
 
 export function jogarNovamente(n) {

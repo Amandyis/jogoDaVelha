@@ -26,7 +26,9 @@ export function jogar() {
 
     campo.forEach((botao) => {
         botao.innerHTML = "";
-        botao.onclick = null;})
+        botao.onclick = null;
+        botao.classList.remove("ocupado");
+    })
 
     let dados = sessionStorage.getItem("jogadores");
     let jogadores = JSON.parse(dados);
@@ -46,11 +48,10 @@ export function jogar() {
 
     campo.forEach((item) => {
         item.innerHTML = ""
-        console.log(campo)
         let clicado = function (event) {
-            console.log(campo)
-            console.log(item.innerHTML)
-            console.log(item.innerHTML.length)
+            // console.log(campo)
+            // console.log(item.innerHTML)
+            // console.log(item.innerHTML.length)
 
             if (ganhou == true || empatou == true) { 
                 return
@@ -70,7 +71,9 @@ export function jogar() {
                     ganhou = true;
                     indicaNome.innerHTML = `<p class="frase">Fim de jogo!</p>`
                     let nomeVencedor = (vencedor === jogador1.simbolo) ? jogador1.nome : jogador2.nome
-                    abrirMensagemVitoria(nomeVencedor)
+                    let troll = (nomeVencedor == jogador1.nome) ? jogador2.nome : jogador1.nome;
+                    console.log(nomeVencedor, troll)
+                    abrirMensagemVitoria(nomeVencedor, troll)
                     return;
                 }
                 

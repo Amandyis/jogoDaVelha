@@ -32,7 +32,11 @@ export function abrirMensagemEmpate(){
     
     document.getElementById('btnSair').addEventListener("click", function(){
         modal4.close();
-        window.location.href = "index.html"
+        const urlDaPagina = window.location.pathname;
+        if (urlDaPagina.includes('index.html')) {
+            const novaUrl = urlDaPagina.replace('index.html', '');
+            window.location.replace(novaUrl);
+        }
     })
     document.getElementById('btnJogar3').addEventListener("click", function(){
         modal4.close();

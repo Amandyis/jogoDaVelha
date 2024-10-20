@@ -1,4 +1,4 @@
-import {abrirModalSimbolo} from "/js/modais/avisoSimbolo.js"
+import { abrirModalSimbolo } from "/js/modais/avisoSimbolo.js"
 
 const modal5 = document.getElementById('modal5');
 
@@ -15,16 +15,28 @@ modal5.innerHTML = `
         </div>
     `
 
-export function abrirMensagemVitoria(nomeGanhador) {
+export function abrirMensagemVitoria(nomeGanhador, nomePerdedor) {
 
     modal5.showModal()
+    console.log(nomeGanhador, nomePerdedor)
+
     let ganhador = document.getElementById('ganhador');
-    ganhador.innerHTML = nomeGanhador
+
+    if (nomeGanhador === "Daniel") {
+        ganhador.innerHTML = nomePerdedor
+    } else {
+        ganhador.innerHTML = nomeGanhador
+    }
     document.getElementById('btnSair1').addEventListener("click", function () {
         modal5.close();
-        window.location.href = "index.html"
+        const urlDaPagina = window.location.pathname;
+        if (urlDaPagina.includes('index.html')) {
+            const novaUrl = urlDaPagina.replace('index.html', '');
+            window.location.replace(novaUrl);
+        }
+        
     })
-    document.getElementById('btnJogar2').addEventListener("click", function(){
+    document.getElementById('btnJogar2').addEventListener("click", function () {
         modal5.close()
         abrirModalSimbolo()
     })

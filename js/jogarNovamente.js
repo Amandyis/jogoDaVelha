@@ -28,6 +28,7 @@ export function jogarNovamente() {
     campo.forEach((botao) => {
         botao.innerHTML = "";
         botao.onclick = null;
+        botao.classList.remove("ocupado");
     })
 
     let dados = sessionStorage.getItem("jogadores");
@@ -91,6 +92,6 @@ export function jogarNovamente() {
 
 
 const urlDaPagina = window.location.pathname;
-if(urlDaPagina.includes('index2.html')){
+if(urlDaPagina.includes('index.html')){
     window.onload = jogarNovamente;
 }

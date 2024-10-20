@@ -29,11 +29,12 @@ export function abrirMensagemVitoria(nomeGanhador, nomePerdedor) {
     }
     document.getElementById('btnSair1').addEventListener("click", function () {
         modal5.close();
-        const urlDaPagina = window.location.pathname;
-        if (urlDaPagina.includes('index.html')) {
-            const novaUrl = urlDaPagina.replace('index.html', '');
-            window.location.replace(novaUrl);
-        }
+        // const urlDaPagina = window.location.pathname;
+        // if (urlDaPagina.includes('index.html')) {
+        //     const novaUrl = urlDaPagina.replace('index.html', '');
+        //     window.location.replace(novaUrl);
+        // }
+        window.location.replace('/');
         
     })
     document.getElementById('btnJogar2').addEventListener("click", function () {

@@ -41,7 +41,6 @@ export function abrirMensagemEmpate(){
     })
     document.getElementById('btnJogar3').addEventListener("click", function(){
         modal4.close();
-        trocarSimbolos();
         abrirModalSimbolo();
     })
 }

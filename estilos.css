@@ -76,6 +76,16 @@ body {
     width: 30vw;
     padding-top: 2em;
     text-align: center;
+    font-size: 18px;
+}
+
+.modalDialog3{
+    border: 0;
+    /* padding: 1.5em 3em; */
+    width: 30vw;
+    padding-top: 3.5em;
+    text-align: center;
+    font-size: 18px;
 }
 
 .campoNome{
@@ -97,6 +107,7 @@ body {
 
 .frase{
     padding-top: 1em;
-    font-weight: 700;
-    font-size: 21px;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
 }

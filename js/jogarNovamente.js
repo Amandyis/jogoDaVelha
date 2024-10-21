@@ -18,11 +18,12 @@ function escolhAleatoria() {
 }
 
 
-export function jogar() {
+export function jogarNovamente() {
 
     ganhou = false;
     empatou = false;
     reiniciarEmpate();
+
 
     campo.forEach((botao) => {
         botao.innerHTML = "";
@@ -47,11 +48,9 @@ export function jogar() {
     indicaNome.innerHTML = `<p class="frase">Vez do jogador: ${jogadorAtual.nome}</p>`
 
     campo.forEach((item) => {
-        item.innerHTML = ""
         let clicado = function (event) {
-            // console.log(campo)
-            // console.log(item.innerHTML)
-            // console.log(item.innerHTML.length)
+            console.log(item.innerHTML)
+            console.log(item.innerHTML.length)
 
             if (ganhou == true || empatou == true) { 
                 return
@@ -71,16 +70,12 @@ export function jogar() {
                     ganhou = true;
                     indicaNome.innerHTML = `<p class="frase">Fim de jogo!</p>`
                     let nomeVencedor = (vencedor === jogador1.simbolo) ? jogador1.nome : jogador2.nome
-                    let troll = (nomeVencedor == jogador1.nome) ? jogador2.nome : jogador1.nome;
-                    console.log(nomeVencedor, troll)
-                    abrirMensagemVitoria(nomeVencedor, troll)
+                    abrirMensagemVitoria(nomeVencedor)
                     return;
                 }
-                
             }
             else {
                 console.log('Entrou no else')
-                abrirModalCelulaOcupada()
                 return
             }
 
@@ -96,4 +91,7 @@ export function jogar() {
 };
 
 
-
+const urlDaPagina = window.location.pathname;
+if(urlDaPagina.includes('index.html')){
+    window.onload = jogarNovamente;
+}

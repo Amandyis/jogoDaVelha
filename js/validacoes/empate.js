@@ -1,6 +1,6 @@
 import {abrirMensagemEmpate} from "/js/modais/mensagemEmpate.js"
 
-let jaFoi = [];
+var jaFoi = [];
 
 export function verificarEmpate(elemento, event) {
     
@@ -8,6 +8,18 @@ export function verificarEmpate(elemento, event) {
     if (jaFoi.length === 9) {
         event.preventDefault()
         abrirMensagemEmpate()
+        console.log(jaFoi)
         return true
     }
+    console.log(jaFoi)
+    return
+
 }
+
+export function reiniciarEmpate() {
+    jaFoi = [];
+}
+
+// function testeDeEmpate(){
+//     let campos =
+// }
